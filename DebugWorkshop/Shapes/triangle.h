@@ -3,14 +3,15 @@
 
 #include "shape.h"
 
-class Triangle : public Shape 
+class Triangle : virtual public Shape 
 {
 private:
 	float _base;
 	float _height;
 public:
 	Triangle(float base, float height);
-	virtual float get_area(bool has_depth = false) const;
+	~Triangle();
+	float get_area() const override; // dont need the virtual here and added override
 
 };
 
